@@ -1,1 +1,1 @@
-> Note: `--capt-add=SYS-ADMIN` is required for PDF rendering.
+> Note: `--CRUD with Livewire with images` and also with Jetstream
