@@ -1,0 +1,308 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Generation Time: Sep 24, 2022 at 02:42 AM
+-- Server version: 5.7.33
+-- PHP Version: 8.1.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `jetdb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employees`
+--
+
+CREATE TABLE `employees` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `designation` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `employees`
+--
+
+INSERT INTO `employees` (`id`, `name`, `image`, `designation`, `email`, `phone`, `created_at`, `updated_at`) VALUES
+(86, 'Sohan', 'Employes/QI5f8mmWWImASjgmGUbhoWwebc48nkXhVD74pU5Q.jpg', 'Database Engineer', 'srsohankhan0@gmail.com', '01609033090', '2022-09-23 18:46:50', '2022-09-23 19:07:11'),
+(88, 'Asik islam', 'Employes/AOlPtV5narfLUmrfixVYoUDXTInQSEmvhQA2CoBm.jpg', 'App Developer', 'asik@gmail.com', '01738852466', '2022-09-23 19:13:43', '2022-09-23 19:13:43'),
+(89, 'Farukh', 'Employes/426bjTcWbhlM5irnooRMuXgFLdCnWx1ZSrKPrd1N.jpg', 'Back-End Designer', 'rarukh@gmail.com', '01729448594', '2022-09-23 20:25:16', '2022-09-23 20:25:16'),
+(90, 'polash', 'Employes/TgHXuIGntdnpIT27Auy6F3FbKwHjo8S8WnY7WcLO.jpg', 'Back-End Developer', 'polash@gmail.com', '01243245843', '2022-09-23 20:28:11', '2022-09-23 20:40:55'),
+(91, 'akash', 'Employes/JnOX1pR7BEQ1biD9D7pwiMJW6hhVz4nMwsA7uBYI.jpg', 'Database Engineer', 'aksh@gmai.com', '01345746383', '2022-09-23 20:30:27', '2022-09-23 20:30:27'),
+(92, 'fuadh', 'Employes/gNZBrSroj0PVqqifq9XLdaULHkFgO0lfnzi6n4Es.jpg', 'Front-End Developer', 'fuad@gmail.com', '01722384743', '2022-09-23 20:32:25', '2022-09-23 20:41:13'),
+(93, 'sakil', 'Employes/Ib47alIQCevOapLiLQcVYP9qMlytKtPSnPl7S7Mx.jpg', 'Digital Markater', 'sakil@gmai.com', '01845324532', '2022-09-23 20:34:18', '2022-09-23 20:34:18'),
+(94, 'Imran Hasan Bipul', 'Employes/euQGCNf8ZjkSt0qjr799gqKGEDcJORbCzJsB1ks0.jpg', 'App Developer', 'bipul@gmai.com', '01840031198', '2022-09-23 20:37:37', '2022-09-23 20:37:37');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2014_10_12_200000_add_two_factor_columns_to_users_table', 1),
+(4, '2019_08_19_000000_create_failed_jobs_table', 1),
+(5, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(6, '2022_09_22_100920_create_sessions_table', 1),
+(7, '2022_09_22_113554_create_employees_table', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `personal_access_tokens`
+--
+
+CREATE TABLE `personal_access_tokens` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci,
+  `last_used_at` timestamp NULL DEFAULT NULL,
+  `expires_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sessions`
+--
+
+CREATE TABLE `sessions` (
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_agent` text COLLATE utf8mb4_unicode_ci,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_activity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sessions`
+--
+
+INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
+('taS88rMbIOa6t6BLI0xkxd3uo1Rbanm9IAt32JVl', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiREFtNUptTWJ4ODY4aE84c3oxbEJ6TDRjNW9kQk8wTDFDeUdNblpzZiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9lbXBsb3llZXMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MjE6InBhc3N3b3JkX2hhc2hfc2FuY3R1bSI7czo2MDoiJDJ5JDEwJDJzLnJDVGpBZ3FZcmVUZmdhT3JrM2VkdFdwYWRVMDdJQzIwcmh5T05QSzhKZ0xsUVgxbzBlIjt9', 1663987294);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `two_factor_secret` text COLLATE utf8mb4_unicode_ci,
+  `two_factor_recovery_codes` text COLLATE utf8mb4_unicode_ci,
+  `two_factor_confirmed_at` timestamp NULL DEFAULT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `current_team_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `profile_photo_path` varchar(2048) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `two_factor_confirmed_at`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
+(1, 'Md Sohanur Rohman', 'srsohankhan0@gmail.com', NULL, '$2y$10$2s.rCTjAgqYreTfgaOrk3edtWpadU07IC20rhyONPK8JgLlQX1o0e', NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-22 04:27:31', '2022-09-22 04:27:31'),
+(26, 'Prof. Alvah Moen II', 'roberta.hoeger@example.com', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'WscDcTdMTK', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(27, 'Alessandro Stanton', 'sarina08@example.net', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, '296FNTbFIL', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(28, 'Nils Goodwin', 'kennedy.mertz@example.org', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'db917DpTSV', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(29, 'Arely Turcotte', 'olga27@example.org', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'dezkBtJ7iH', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(30, 'Derek Kuvalis', 'mprosacco@example.com', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'aS5y420yAA', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(31, 'Jane Sanford', 'keagan.hane@example.org', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'SWw9YDMWuz', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(32, 'Prof. Melvin Schmidt Jr.', 'gonzalo57@example.net', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'KWKOWvTLcn', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(33, 'Mrs. Stacy Mayer', 'woodrow.conn@example.org', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'LYQRdKlgb1', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(34, 'Lincoln Sipes IV', 'major.pfannerstill@example.com', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'uObZVmZ0nq', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(35, 'Richard Koepp', 'beier.nelson@example.net', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'Aw5JZEHtYR', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(36, 'Eliseo Wiza', 'joany50@example.org', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'rKrqScYIxc', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(37, 'Mr. Joany Huel Sr.', 'dorthy91@example.org', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'cocWJiivRg', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(38, 'Ahmed Cormier', 'jaquelin.torp@example.net', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'Mi5NcScFyM', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(39, 'Aryanna Kuhic', 'willa.wilkinson@example.org', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'hQVbAYy085', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(40, 'Marianna Bogan', 'pcorwin@example.net', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'hBPmxc49P0', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(41, 'Raquel Roberts DVM', 'kathryn.casper@example.org', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'Lh6pp9oFUV', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(42, 'Dr. Edmond Schamberger Jr.', 'kmclaughlin@example.net', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'Bum682HKh1', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(43, 'Gloria Shields', 'bernier.rene@example.org', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'RH3Bw3tAab', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(44, 'Micah Abernathy', 'pweissnat@example.org', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'FpW09DeKxT', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(45, 'Ms. Rachel Schultz', 'kautzer.candace@example.org', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'NaNSkySn01', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(46, 'Dr. Jerrod Harber', 'dach.dulce@example.com', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'KoBtNv5KqL', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(47, 'Blaise Grady', 'millie.balistreri@example.org', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'OYU0dutQ2n', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(48, 'Jillian Prosacco', 'ostracke@example.net', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'GuDPe0W1rC', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(49, 'Harvey Erdman I', 'ybergnaum@example.net', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'puX7f2Rf3Q', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(50, 'Prof. Harley Kautzer', 'von.josh@example.org', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'c1OeBt2vmf', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(51, 'Luisa Jacobson DVM', 'jacobson.heather@example.net', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'oEqFbvfaSM', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(52, 'Dr. Dayton Jaskolski I', 'schoen.reid@example.net', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'Gho1U7oTQp', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(53, 'Gayle Strosin', 'lolita.wisoky@example.org', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'XlwccV0oYJ', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(54, 'Tremayne Huels IV', 'welch.kelvin@example.com', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'KGUoiTKbza', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(55, 'Nils Harber', 'lorena36@example.com', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'IG7byH0Vsn', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(56, 'Henriette Hill I', 'pschimmel@example.org', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'CAs27AU5cz', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(57, 'Helen Schaefer', 'buster.johnston@example.org', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'UDSNVFINYB', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(58, 'Dr. Kennedi Cole', 'morris75@example.com', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'NGybYDIALK', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(59, 'Prof. Janet Hoppe II', 'uadams@example.com', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, '8TPinMXJcn', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(60, 'Robert Okuneva', 'mjakubowski@example.net', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'D8MLd2kCpY', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(61, 'Sigrid Wiza V', 'julio.mcclure@example.net', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'MZJ3h2GQQ7', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(62, 'Prof. Lexie Cummings V', 'alfreda64@example.net', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'Z2gdBhyAM4', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(63, 'Dariana Rohan', 'bednar.mitchell@example.com', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'ELdnuqoQp0', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(64, 'Jaqueline Rodriguez', 'sophie79@example.com', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'Qhnv3vt36k', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(65, 'Prof. Gennaro Grant', 'oberbrunner.madelynn@example.org', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'fjucOgt2Zg', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08'),
+(66, 'Jeramy Fisher', 'mmorissette@example.org', '2022-09-23 09:30:07', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 'q66hqQ38nw', NULL, NULL, '2022-09-23 09:30:08', '2022-09-23 09:30:08');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `employees`
+--
+ALTER TABLE `employees`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Indexes for table `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
+  ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
+
+--
+-- Indexes for table `sessions`
+--
+ALTER TABLE `sessions`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `sessions_user_id_index` (`user_id`),
+  ADD KEY `sessions_last_activity_index` (`last_activity`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `employees`
+--
+ALTER TABLE `employees`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+
+--
+-- AUTO_INCREMENT for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
